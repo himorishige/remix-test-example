@@ -1,7 +1,12 @@
-import { json, LoaderArgs, LoaderFunction } from '@remix-run/node';
+import { json } from '@remix-run/node';
+import { client } from '~/lib/microcmsClient.server';
+import type { Content } from '~/types';
 
 export const loader = async () => {
-  return json({ message: 'Hello World' });
+  const { contents } = await client.getList<Content>({
+    endpoint: 'blog',
+  });
+  return json(contents);
 };
 
 export default function Index() {

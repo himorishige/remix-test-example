@@ -7,6 +7,9 @@ import {
   toRedirect,
   toSetACookie,
 } from './test-utils';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 expect.extend({
   toBeOk,
