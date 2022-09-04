@@ -6,6 +6,7 @@
     "dev": "remix dev",
     "start": "remix-serve build",
     "test": "vitest",
+    "coverage": "npx vitest --coverage",
     "lint": "eslint  --max-warnings=0",
     "type-check": "tsc --noEmit"
   },
@@ -27,6 +28,7 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",
+    "@vitest/coverage-c8": "^0.22.1",
     "dotenv": "^16.0.1",
     "eslint": "^8.20.0",
     "eslint-plugin-testing-library": "^5.6.0",
