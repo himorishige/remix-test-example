@@ -1,5 +1,5 @@
 import { json } from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
+import { Link, useLoaderData } from '@remix-run/react';
 import { client } from '~/lib/microcmsClient.server';
 import type { Content } from '~/types';
 
@@ -18,7 +18,9 @@ export default function Index() {
       <h1>Welcome to Remix</h1>
       <ul>
         {contents.map((content) => (
-          <li key={content.id}>{content.title}</li>
+          <li key={content.id}>
+            <Link to={`/posts/${content.id}`}>{content.title}</Link>
+          </li>
         ))}
       </ul>
     </div>

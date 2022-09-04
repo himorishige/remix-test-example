@@ -32,4 +32,23 @@ export const expectedLoaderData = {
       },
     ],
   },
+  posts: {
+    $postId: {
+      content: {
+        id: 'f-zns4l3mlgv',
+        createdAt: '2022-01-27T08:29:37.681Z',
+        updatedAt: '2022-03-23T13:10:06.190Z',
+        publishedAt: '2022-01-27T08:29:37.681Z',
+        revisedAt: '2022-03-23T13:10:06.190Z',
+        title: 'ブログのタイトル',
+        image: {
+          url: 'https://images.microcms-assets.io/assets/95d513e80bc8478794c45550a10dcb20/98840b0a12834dbd8c83c459eed18c56/%E3%81%93%E3%82%99%E9%A3%AF%E3%81%AE%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88.png',
+          height: 273,
+          width: 300,
+        },
+        body: '<h1 id="h1c1c9233e6">見出し</h1><p>本文のテキスト</p><pre><code>&lt;script&gt;alert("1");&lt;/script&gt;</code></pre><p><img src="https://images.microcms-assets.io/assets/95d513e80bc8478794c45550a10dcb20/98840b0a12834dbd8c83c459eed18c56/%E3%81%93%E3%82%99%E9%A3%AF%E3%81%AE%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88.png" alt=""><br></p>',
+        username: 'test',
+      },
+    },
+  },
 };
