@@ -1,12 +1,9 @@
 import { json } from '@remix-run/node';
 import { Link, useLoaderData } from '@remix-run/react';
-import { client } from '~/lib/microcmsClient.server';
-import type { Content } from '~/types';
+import { getPostList } from '~/usecase/post';
 
 export const loader = async () => {
-  const { contents } = await client.getList<Content>({
-    endpoint: 'blog',
-  });
+  const contents = await getPostList();
   return json({ contents });
 };
 

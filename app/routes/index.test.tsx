@@ -15,7 +15,12 @@ vi.doMock('@remix-run/react', async () => {
 
 import { render, screen } from '@testing-library/react';
 import Index, { loader } from './index';
-import { client } from '~/lib/microcmsClient.server';
+
+vi.mock('~/usecase/post', async () => {
+  return {
+    getPostList: vi.fn().mockReturnValue(expectedLoaderData.index.contents),
+  };
+});
 
 afterEach(() => {
   vi.clearAllMocks();
@@ -30,15 +35,7 @@ describe('index page', () => {
 });
 
 describe('loader', () => {
-  const spy = vi.spyOn(client, 'getList');
-  spy.mockResolvedValue({
-    contents: expectedLoaderData.index.contents,
-    totalCount: 2,
-    limit: 0,
-    offset: 0,
-  });
-
-  it('should return a response', async () => {
+  test('should return a response', async () => {
     const response = await loader();
 
     expect(response).toBeInstanceOf(Response);
