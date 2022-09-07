@@ -33,7 +33,7 @@ describe('index page', () => {
 
 describe('loader', () => {
   const spy = vi.spyOn(client, 'get');
-  it('should return a response', async () => {
+  test('should return a response', async () => {
     spy.mockResolvedValue(expectedLoaderData.posts.$postId.content);
 
     const response = await loader({
@@ -52,7 +52,7 @@ describe('loader', () => {
     );
   });
 
-  it('should return a response with 404', async () => {
+  test('should return a response with 404', async () => {
     spy.mockRejectedValue(new Response('Content Not Found.', { status: 404 }));
 
     await expect(loader).rejects.toThrowError();
